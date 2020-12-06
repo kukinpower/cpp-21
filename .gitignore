@@ -1,3 +1,11 @@
+# Editors
+.vscode
+.idea
+cmake-build-debug
+
+# Unused
+.DS_Store
+
 # Prerequisites
 *.d
 
