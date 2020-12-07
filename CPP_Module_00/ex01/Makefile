@@ -1,7 +1,8 @@
 NAME = phonebook
 
 SRC = phonebook.cpp \
-		Phonebook.class.cpp
+		Phonebook.class.cpp \
+		Contact.class.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
