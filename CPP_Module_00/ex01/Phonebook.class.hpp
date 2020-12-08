@@ -5,17 +5,19 @@
 
 class Phonebook {
 public:
-	Contact			contacts[8];
-	int				i;
-	int				entryIndex;
-
 	Phonebook();
 	~Phonebook();
 
-	void	add();
-	void	search();
-	void	displayContacts();
-	void	displayEntry();
+	void		add();
+	void		search();
+	void		displayContacts() const;
+	void		displayEntry() const;
+
+private:
+	Contact		_contacts[8];
+	int			_i;
+	std::string	_entryIndexStr;
+	int			_entryIndex;
 };
 
 #endif
