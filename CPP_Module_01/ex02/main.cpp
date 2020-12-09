@@ -4,6 +4,7 @@
 
 int main()
 {
-	
+    ZombieEvent eve;
+    eve.Random
     return 0;
 }

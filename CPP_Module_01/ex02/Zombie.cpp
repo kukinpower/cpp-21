@@ -8,5 +8,5 @@ Zombie::~Zombie() {
 }
 
 void	Zombie::announce() const{
-	std::cout << this->_name << "(" << this->_type << ")> Braiiiiiiinnnssss..." << std::endl;
+	std::cout << this->_name << "(" << this->_type << ")> I'm alive! Wait..." << std::endl;
 }
