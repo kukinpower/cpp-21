@@ -1,5 +1,5 @@
 #include <iostream>
-// #include <cstdlib>
+#include <stdlib.h> 
 #include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent() {
@@ -14,12 +14,12 @@ void	ZombieEvent::setZombieType(std::string type) {
 }
 
 Zombie* ZombieEvent::newZombie(std::string name) {
-	Zombie	*newZombie = new Zombie(name, this->_type);
-	return newZombie;
+	Zombie	*newOne = new Zombie(name, this->_type);
+	return newOne;
 }
 
 void	ZombieEvent::randomChump() {
 	std::string	nameArray[8] = {"Wellington", "Amsterdam", "Monaco", "Moscow", "London", "New-York", "Berlin", "Paris"};
-	Zombie	newZombie(nameArray[rand() % 8], this->_type);
-	newZombie.announce();
+	Zombie	chumpZombie(nameArray[rand() % 8], this->_type);
+	chumpZombie.announce();
 }
