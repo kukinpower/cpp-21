@@ -1,4 +1,4 @@
-NAME = weapons
+NAME = replace
 
 SRC = main.cpp \
 		File.cpp

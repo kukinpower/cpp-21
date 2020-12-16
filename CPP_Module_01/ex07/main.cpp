@@ -10,8 +10,8 @@ int		main(int ac, char const *av[]) {
 		return 1;
 	}
 	File	file(av[1], av[2], av[3]);
-	file.fileReplace().fileOpen();
-
+	file.fileReplace();
+	std::cout << "Success" << std::endl;
 
 	return 0;
 }
