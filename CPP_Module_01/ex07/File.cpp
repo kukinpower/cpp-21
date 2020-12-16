@@ -20,8 +20,8 @@ void 	File::fileCreateReplace() {
 
 void 	File::fileOpen() {
 
-	this->_srcFile.open(this->_path);
-	if (!this->_srcFile.is_open()) {
+	this->_file.open(this->_path);
+	if (!this->_file.is_open()) {
 		std::cerr << "File was not open" << std::endl;
 		exit(1);
 	}
@@ -30,7 +30,7 @@ void 	File::fileOpen() {
 void 	File::fileRead() {
 
 	this->fileOpen();
-	this->_buf << this->_srcFile.rdbuf();
+	this->_buf << this->_file.rdbuf();
 }
 
 void 	File::fileReplace() {
@@ -47,5 +47,5 @@ void 	File::fileReplace() {
 		this->_replaceFile << this->_lineBuf << std::endl;
 	}
 	this->_replaceFile.close();
-	this->_srcFile.close();
+	this->_file.close();
 }

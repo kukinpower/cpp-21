@@ -45,3 +45,8 @@ add_executable(ex08
 add_executable(ex09
         ex09/Logger.cpp
         ex09/main.cpp)
+
+add_executable(ex10
+        ex10/File.cpp
+        ex10/Cat.cpp
+        ex10/main.cpp)

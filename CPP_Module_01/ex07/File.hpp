@@ -18,7 +18,7 @@ private:
 	std::string			_path;
 	std::string			_from;
 	std::string			_to;
-	std::ifstream		_srcFile;
+	std::ifstream		_file;
 	std::ofstream		_replaceFile;
 	std::stringstream	_buf;
 	std::string 		_lineBuf;
