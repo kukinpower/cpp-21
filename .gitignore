@@ -3,7 +3,7 @@
 .idea
 cmake-build-debug
 #CMakeLists.txt
-
+*.txt
 # Unused
 .DS_Store
 
