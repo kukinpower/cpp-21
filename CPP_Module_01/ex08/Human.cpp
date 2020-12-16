@@ -1,5 +1,7 @@
 #include "Human.hpp"
 
+typedef void (Human::*HunanFunctionPtr)(std::string const& target);
+
 void Human::meleeAttack(std::string const & target) {
 
 	std::cout << "Human attacks " << target << " in the melee" << std::endl;
@@ -16,15 +18,14 @@ void Human::intimidatingShout(std::string const & target) {
 }
 
 void Human::action(std::string const & action_name, std::string const & target) {
+	HunanFunctionPtr	hfp[] = { &Human::meleeAttack, &Human::rangedAttack, &Human::intimidatingShout };
+	std::string const	actions[3] = {"meleeAttack", "rangedAttack", "intimidatingShout"};
 
-	std::string 	actions[3] = {"meleeAttack", "rangedAttack", "intimidatingShout"};
-	if (action_name == "meleeAttack") {
-		this->meleeAttack(target);
-	} else if (action_name == "rangedAttack") {
-		this->rangedAttack(target);
-	} else if (action_name == "intimidatingShout") {
-		this->intimidatingShout(target);
-	} else {
-		std::cout << "Human can't do this" << std::endl;
+	for (int i = 0; i < 3; i++) {
+		if (action_name == actions[i]) {
+			(this->*hfp[i])(target);
+			return ;
+		}
 	}
+	std::cerr << "Human can't do this" << std::endl;
 }
