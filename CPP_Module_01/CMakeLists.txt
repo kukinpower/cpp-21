@@ -41,3 +41,7 @@ add_executable(ex07
 add_executable(ex08
         ex08/Human.cpp
         ex08/main.cpp)
+
+add_executable(ex09
+        ex09/Logger.cpp
+        ex09/main.cpp)
