@@ -2,7 +2,7 @@
 .vscode
 .idea
 cmake-build-debug
-CMakeLists.txt
+#CMakeLists.txt
 
 # Unused
 .DS_Store
