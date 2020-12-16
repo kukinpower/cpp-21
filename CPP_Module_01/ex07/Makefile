@@ -1,7 +1,7 @@
 NAME = weapons
 
 SRC = main.cpp \
-		File.cpp \
+		File.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = clang++
