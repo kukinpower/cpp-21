@@ -1,8 +1,6 @@
-NAME = cato9tails
+NAME = ex01
 
-SRC = main.cpp \
-		File.cpp \
-		Cat.cpp
+SRC = ex01.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = clang++

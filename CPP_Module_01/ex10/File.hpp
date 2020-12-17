@@ -9,7 +9,7 @@ class File {
 public:
 	File(const std::string& path);
 	~File();
-	void 	fileOpen();
+	bool 	fileOpen();
 	void 	fileRead();
 
 private:
