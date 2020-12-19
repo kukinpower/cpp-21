@@ -2,46 +2,70 @@
 
 Fixed::Fixed() : _value(0) {
 
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::~Fixed() {
 
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy) {
 
-	std::cout << "Copy constructor called" << std::endl;
 	this->operator=(copy);
 }
 
 Fixed::Fixed(const int num) : _value(num << Fixed::_fractionalBitsNum) {
 
-	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float num) : _value(roundf(num * (1 << Fixed::_fractionalBitsNum))) {
 
-	std::cout << "Float constructor called" << std::endl;
 }
+
+//• Six comparison operators: >, <, >=, <=, == and !=.
+//• Four arithmetic operators: +, -, *, and /.
 
 Fixed	&Fixed::operator=(const Fixed &copy) {
 
-	std::cout << "Assignation operator called" << std::endl;
 	this->_value = copy.getRawBits();
+	return *this;
+}
+
+Fixed	&Fixed::operator*(const Fixed &copy) {
+
+	// Multiply into a larger sized variable, and then
+	// right shift by the number of bits of fixed point precision.
+	int64_t tmp = (this->_value * copy.getRawBits()) / (1 << Fixed::_fractionalBitsNum);
+	this->_value = tmp;
+	return *this;
+}
+
+Fixed	&Fixed::operator/(const Fixed &copy) {
+
+	// Divide and left shift by the number of bits of fixed point precision.
+	int32_t tmp = (this->_value / copy.getRawBits()) * (1 << Fixed::_fractionalBitsNum);
+	this->_value = tmp;
+	return *this;
+}
+
+Fixed	&Fixed::operator+(const Fixed &copy) {
+
+	this->_value += copy.getRawBits();
+	return *this;
+}
+
+Fixed	&Fixed::operator-(const Fixed &copy) {
+
+	this->_value -= copy.getRawBits();
 	return *this;
 }
 
 int		Fixed::getRawBits( void ) const {
 
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->_value;
 }
 
 void	Fixed::setRawBits( int const raw ) {
 
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
 
