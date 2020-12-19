@@ -59,6 +59,7 @@ Fixed	&Fixed::operator-(const Fixed &copy) {
 	return *this;
 }
 
+// Comparison operators overload
 bool Fixed::operator>(const Fixed &copy) {
 
 	return this->_value > copy.getRawBits();
@@ -87,6 +88,33 @@ bool Fixed::operator==(const Fixed &copy) {
 bool Fixed::operator!=(const Fixed &copy) {
 
 	return this->_value != copy.getRawBits();
+}
+
+// Increment and decrement operators overload
+Fixed &Fixed::operator++() {	// Prefix increment operator.
+
+	this->_value++;
+	return *this;
+}
+
+Fixed &Fixed::operator++(int) {	// Postfix increment operator.
+
+	Fixed tmp = *this;	// create a copy of an object with same value
+	++*this;			// increment value of current object
+	return tmp;			// return copy of object with old value
+}
+
+Fixed &Fixed::operator--() {	// Prefix decrement operator.
+
+	this->_value--;
+	return *this;
+}
+
+Fixed &Fixed::operator--(int) {	// Postfix decrement operator.
+
+	Fixed tmp = *this;	// create a copy of an object with same value
+	--*this;			// decrement value of current object
+	return tmp;			// return copy of object with old value
 }
 
 int		Fixed::getRawBits( void ) const {

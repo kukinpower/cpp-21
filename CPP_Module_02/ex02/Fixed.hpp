@@ -28,6 +28,12 @@ public:
 	bool operator==(const Fixed &copy);
 	bool operator!=(const Fixed &copy);
 
+	// Increment and decrement operators overload
+	Fixed &operator++();       // Prefix increment operator.
+	Fixed operator++(int);    // Postfix increment operator.
+	Fixed &operator--();       // Prefix decrement operator.
+	Fixed operator--(int);     // Postfix decrement operator.
+
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
