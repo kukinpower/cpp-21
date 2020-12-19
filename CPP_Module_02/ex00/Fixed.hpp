@@ -5,10 +5,10 @@
 class Fixed {
 
 public:
-	Fixed();
-	Fixed(const Fixed &copy);
-	~Fixed();
-	Fixed &operator=(const Fixed &copy);
+	Fixed();								// default constructor
+	Fixed(const Fixed &copy);				// copy constructor
+	~Fixed();								// deconstructor
+	Fixed &operator=(const Fixed &copy);	// assignation operator
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
