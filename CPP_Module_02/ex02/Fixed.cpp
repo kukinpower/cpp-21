@@ -22,7 +22,6 @@ Fixed::Fixed(const float num) : _value(roundf(num * (1 << Fixed::_fractionalBits
 }
 
 //• Six comparison operators: >, <, >=, <=, == and !=.
-//• Four arithmetic operators: +, -, *, and /.
 
 Fixed	&Fixed::operator=(const Fixed &copy) {
 
@@ -30,6 +29,7 @@ Fixed	&Fixed::operator=(const Fixed &copy) {
 	return *this;
 }
 
+// Arithmetic operators overload
 Fixed	&Fixed::operator*(const Fixed &copy) {
 
 	// Multiply into a larger sized variable, and then
@@ -57,6 +57,36 @@ Fixed	&Fixed::operator-(const Fixed &copy) {
 
 	this->_value -= copy.getRawBits();
 	return *this;
+}
+
+bool Fixed::operator>(const Fixed &copy) {
+
+	return this->_value > copy.getRawBits();
+}
+
+bool Fixed::operator<(const Fixed &copy) {
+
+	return this->_value < copy.getRawBits();
+}
+
+bool Fixed::operator>=(const Fixed &copy) {
+
+	return this->_value >= copy.getRawBits();
+}
+
+bool Fixed::operator<=(const Fixed &copy) {
+
+	return this->_value <= copy.getRawBits();
+}
+
+bool Fixed::operator==(const Fixed &copy) {
+
+	return this->_value == copy.getRawBits();
+}
+
+bool Fixed::operator!=(const Fixed &copy) {
+
+	return this->_value != copy.getRawBits();
 }
 
 int		Fixed::getRawBits( void ) const {

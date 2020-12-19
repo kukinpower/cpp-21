@@ -13,10 +13,20 @@ public:
 	~Fixed();
 
 	Fixed &operator=(const Fixed &copy);
+
+	// Arithmetic operators overload
 	Fixed &operator*(const Fixed &copy);
 	Fixed &operator/(const Fixed &copy);
 	Fixed &operator+(const Fixed &copy);
 	Fixed &operator-(const Fixed &copy);
+
+	// Comparison operators overload
+	bool operator>(const Fixed &copy);
+	bool operator<(const Fixed &copy);
+	bool operator>=(const Fixed &copy);
+	bool operator<=(const Fixed &copy);
+	bool operator==(const Fixed &copy);
+	bool operator!=(const Fixed &copy);
 
 
 	int getRawBits( void ) const;
