@@ -21,8 +21,6 @@ Fixed::Fixed(const float num) : _value(roundf(num * (1 << Fixed::_fractionalBits
 
 }
 
-//• Six comparison operators: >, <, >=, <=, == and !=.
-
 Fixed	&Fixed::operator=(const Fixed &copy) {
 
 	this->_value = copy.getRawBits();
@@ -97,7 +95,7 @@ Fixed &Fixed::operator++() {	// Prefix increment operator.
 	return *this;
 }
 
-Fixed &Fixed::operator++(int) {	// Postfix increment operator.
+Fixed Fixed::operator++(int) {	// Postfix increment operator.
 
 	Fixed tmp = *this;	// create a copy of an object with same value
 	++*this;			// increment value of current object
@@ -110,7 +108,7 @@ Fixed &Fixed::operator--() {	// Prefix decrement operator.
 	return *this;
 }
 
-Fixed &Fixed::operator--(int) {	// Postfix decrement operator.
+Fixed Fixed::operator--(int) {	// Postfix decrement operator.
 
 	Fixed tmp = *this;	// create a copy of an object with same value
 	--*this;			// decrement value of current object
@@ -141,4 +139,37 @@ std::ostream	&operator<<(std::ostream &out, const Fixed &value) {
 
 	out << value.toFloat();
 	return out;
+}
+
+// Min Max functions
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+
+	if (a.getRawBits() < b.getRawBits()) {
+		return a;
+	}
+	return b;
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+
+	if (a.getRawBits() < b.getRawBits()) {
+		return a;
+	}
+	return b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
+
+	if (a.getRawBits() > b.getRawBits()) {
+		return a;
+	}
+	return b;
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
+
+	if (a.getRawBits() > b.getRawBits()) {
+		return a;
+	}
+	return b;
 }
