@@ -83,7 +83,7 @@ void	FragTrap::takeDamage(unsigned int amount) {
 		std::cout << "FR4G-TP " << GREEN(this->_name) << " Doesn't get any damage. " RED_SET << amount << " damage" << RESET << " is lower then armor damage reduction. " << SPRING_GREEN_SET << "Armor damage reduction: " << this->_armorDamageReduction << RESET << std::endl;
 		std::cout << "FR4G-TP " << GREEN(this->_name) << " says: " << KHAKI_SET << "I'm on a roll!" << RESET << std::endl;
 	} else {
-		std::cout << "FR4G-TP " << GREEN(this->_name) << "Doesn't get any damage. There is something wrong with damage amount. " << RED_SET << amount << " damage" << RESET << ". " << "Really?" << std::endl;
+		std::cout << "FR4G-TP " << GREEN(this->_name) << " Doesn't get any damage. There is something wrong with damage amount. " << RED_SET << amount << " damage" << RESET << ". " << "Really?" << std::endl;
 		std::cout << "FR4G-TP " << GREEN(this->_name) << " says: " << KHAKI_SET << "Disgusting. I love it!" << RESET << std::endl;
 	}
 
