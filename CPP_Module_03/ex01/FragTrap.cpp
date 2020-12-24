@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : _name(name), _hitPoints(100), _maxHitPoints(100),
-										_energyPoints(100), _maxEnergyPoints(100), _lvl(1),
+FragTrap::FragTrap(std::string name) :  _hitPoints(100), _maxHitPoints(100),
+										_energyPoints(100), _maxEnergyPoints(100), _lvl(1), _name(name),
 										_meleeAttackDamage(30), _rangedAttackDamage(20),
 										_armorDamageReduction(5) {
 

@@ -1,7 +1,7 @@
 NAME = ex00
 
 SRC = main.cpp \
-		Fixed.cpp
+		FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = clang++

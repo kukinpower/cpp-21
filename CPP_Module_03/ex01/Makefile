@@ -1,7 +1,8 @@
-NAME = ex00
+NAME = ex01
 
 SRC = main.cpp \
-		Fixed.cpp
+		FragTrap.cpp \
+		ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = clang++

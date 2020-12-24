@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name), _hitPoints(100), _maxHitPoints(100),
-										_energyPoints(50), _maxEnergyPoints(50), _lvl(1),
+ScavTrap::ScavTrap(std::string name) :  _hitPoints(100), _maxHitPoints(100),
+										_energyPoints(50), _maxEnergyPoints(50), _lvl(1), _name(name),
 										_meleeAttackDamage(20), _rangedAttackDamage(15),
 										_armorDamageReduction(3) {
 
