@@ -7,6 +7,8 @@ int		main(void) {
 	FragTrap	claptrap("claptrap");
 	FragTrap	clone(claptrap);
 
+	clone.takeDamage(0);
+	clone.takeDamage(-1);
 	clone.takeDamage(90);
 	clone.takeDamage(200);
 	clone.takeDamage(1);
