@@ -6,6 +6,7 @@ Squad::Squad() : _squad(nullptr), _count(0) {
 
 Squad::~Squad() {
 
+	freeSquad();
 }
 
 Squad::Squad(const Squad &copy) {
@@ -14,9 +15,7 @@ Squad::Squad(const Squad &copy) {
 }
 
 Squad	&Squad::operator=(const Squad &copy) {
-//Upon copy construction or assignation of a Squad , the copy must be deep. Upon
-//assignation, if there was any unit in the Squad before, they must be destroyed before
-//being replaced. You can assume every unit will be created with new .
+
 	if (_count > 0) {
 		freeSquad();
 	}
@@ -78,8 +77,10 @@ int		Squad::push(ISpaceMarine* unit) {
 	ISpaceMarine **tmp = new ISpaceMarine*[_count + 1];
 
 	int i = copySquad(tmp);
-
 	tmp[i] = unit;
 	delete[] _squad;
 	_squad = tmp;
+	_count++;
+
+	return _count;
 }
