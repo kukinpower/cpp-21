@@ -12,10 +12,10 @@ int main()
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 
-//	std::cout << std::endl;
-//	Badass	badass("Bad");
-//	std::cout << badass;
-//	robert.polymorph(badass);
+	std::cout << std::endl;
+	Badass	badass("Bad");
+	std::cout << badass;
+	robert.polymorph(badass);
 	return 0;
 }
 
