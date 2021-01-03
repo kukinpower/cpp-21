@@ -8,7 +8,7 @@ class Badass : public Enemy {
 public:
 	Badass();
 	Badass(const Badass &copy);
-	~Badass();
+	virtual ~Badass();
 	Badass &operator=(const Badass &copy);
 
 	void	takeDamage(int damage);
