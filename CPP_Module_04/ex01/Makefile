@@ -1,7 +1,13 @@
-NAME = ex00
+NAME = ex01
 
 SRC = main.cpp \
 		AWeapon.cpp \
+		Character.cpp \
+		Enemy.cpp \
+		PlasmaRifle.cpp \
+		PowerFist.cpp \
+		RadScorpion.cpp \
+		SuperMutant.cpp
 
 
 OBJ = $(SRC:.cpp=.o)
