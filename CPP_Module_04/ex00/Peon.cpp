@@ -15,11 +15,12 @@ Peon::~Peon() {
 }
 
 Peon::Peon(const Peon &copy) : Victim(copy) {
-
+	*this = copy;
 }
 
 Peon	&Peon::operator=(const Peon &copy) {
 
+	_name = copy.getName();
 	return *this;
 }
 

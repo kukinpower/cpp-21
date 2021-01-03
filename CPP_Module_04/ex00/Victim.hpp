@@ -13,10 +13,8 @@ public:
 	std::string getName() const;
 	virtual void getPolymorphed() const;
 
-private:
-	std::string	_name;
-
 protected:
+	std::string	_name;
 	Victim();
 };
 
