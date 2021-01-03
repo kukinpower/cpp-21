@@ -21,7 +21,7 @@ AWeapon	&AWeapon::operator=(const AWeapon &copy) {
 	return *this;
 }
 
-std::string const AWeapon::getName() const {
+std::string const &AWeapon::getName() const {
 
 	return _name;
 }

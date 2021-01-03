@@ -10,7 +10,7 @@ public:
 	virtual ~AWeapon();
 	AWeapon &operator=(const AWeapon &copy);
 
-	std::string const getName() const;
+	std::string const &getName() const;
 	int getAPCost() const;
 	int getDamage() const;
 	virtual void attack() const = 0;

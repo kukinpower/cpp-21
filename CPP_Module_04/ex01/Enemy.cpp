@@ -20,7 +20,7 @@ Enemy	&Enemy::operator=(const Enemy &copy) {
 	return *this;
 }
 
-std::string const Enemy::getType() const {
+std::string const &Enemy::getType() const {
 
 	return _type;
 }

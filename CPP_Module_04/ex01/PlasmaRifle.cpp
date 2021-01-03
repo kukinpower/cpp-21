@@ -10,10 +10,14 @@ PlasmaRifle::~PlasmaRifle() {
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) {
 
+	*this = copy;
 }
 
 PlasmaRifle	&PlasmaRifle::operator=(const PlasmaRifle &copy) {
 
+	_name = copy._name;
+	_apcost = copy._apcost;
+	_damage = copy._damage;
 	return *this;
 }
 

@@ -26,5 +26,7 @@ void SuperMutant::takeDamage(int damage) {
 
 	if (damage > 3)
 		damage -= 3;
+	else
+		damage = 0;
 	Enemy::takeDamage(damage);
 }

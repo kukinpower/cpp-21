@@ -2,6 +2,8 @@
 #include "PowerFist.hpp"
 #include "PlasmaRifle.hpp"
 #include "Enemy.hpp"
+#include "RadScorpion.hpp"
+#include "Character.hpp"
 
 int main()
 {
