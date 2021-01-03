@@ -15,7 +15,7 @@ public:
 	int getHP() const;
 	virtual void takeDamage(int damage);
 
-protected:
+private:
 	int 		_hp;
 	std::string _type;
 };
