@@ -7,7 +7,9 @@ SRC = main.cpp \
 		PlasmaRifle.cpp \
 		PowerFist.cpp \
 		RadScorpion.cpp \
-		SuperMutant.cpp
+		SuperMutant.cpp \
+		LaserSword.cpp \
+		Badass.cpp
 
 
 OBJ = $(SRC:.cpp=.o)

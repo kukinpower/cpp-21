@@ -4,6 +4,8 @@
 #include "Enemy.hpp"
 #include "RadScorpion.hpp"
 #include "Character.hpp"
+#include "Badass.hpp"
+#include "LaserSword.hpp"
 
 int main()
 {
@@ -24,10 +26,25 @@ int main()
 	me->attack(b);
 	std::cout << *me;
 
+	std::cout << std::endl << "------------ Thorough testing ------------" << std::endl;
+	Enemy	*badass = new Badass();
+	AWeapon	*sword = new LaserSword();
+	me->equip(sword);
+	std::cout << *me;
+	std::cout << "Badass HP: " << badass->getHP() << std::endl;
+	me->attack(badass);
+	std::cout << *me;
+	std::cout << "Badass HP: " << badass->getHP() << std::endl;
+	me->attack(badass);
+	std::cout << *me;
+	std::cout << "Badass HP: " << badass->getHP() << std::endl;
+
 	std::cout << std::endl << "------------ DELETE ------------" << std::endl;
 	delete me;
 	delete pr;
 	delete pf;
+//	delete badass;
+	delete sword;
 	return 0;
 }
 
