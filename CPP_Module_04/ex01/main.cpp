@@ -23,6 +23,11 @@ int main()
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
+
+	std::cout << std::endl << "------------ DELETE ------------" << std::endl;
+	delete me;
+	delete pr;
+	delete pf;
 	return 0;
 }
 
