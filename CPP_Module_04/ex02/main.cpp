@@ -19,6 +19,17 @@ int main()
 		cur->meleeAttack();
 	}
 	delete vlc;
+
+	vlc = new Squad;
+	bob = new TacticalMarine;
+	jim = new AssaultTerminator;
+	vlc->push(bob);
+	vlc->push(bob);
+	vlc->push(jim);
+	vlc->push(jim);
+	std::cout << vlc->getCount() << std::endl;
+	delete vlc;
+
 	return 0;
 }
 
