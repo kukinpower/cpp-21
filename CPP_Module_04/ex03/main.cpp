@@ -20,9 +20,36 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
-	delete bob;
 	delete me;
 	delete src;
+
+	std::cout << "--------- TEST ---------" << std::endl;
+
+	IMateriaSource* newSrc = new MateriaSource();
+	newSrc->learnMateria(new Ice());
+	newSrc->learnMateria(new Cure());
+	newSrc->learnMateria(new Ice());
+	newSrc->learnMateria(new Cure());
+	ICharacter *person = new Character("person");
+
+	tmp = newSrc->createMateria("cure");
+	person->equip(tmp);
+	person->use(0, *bob);
+	tmp = newSrc->createMateria("cure");
+	person->equip(tmp);
+	person->use(1, *bob);
+	tmp = newSrc->createMateria("ice");
+	person->equip(tmp);
+	person->use(2, *bob);
+	tmp = newSrc->createMateria("ice");
+	person->equip(tmp);
+	person->use(3, *bob);
+//	tmp = newSrc->createMateria("ice");
+//	person->equip(tmp);
+//	person->use(4, *bob);
+	delete person;
+	delete newSrc;
+	delete bob;
 	return 0;
 }
 
