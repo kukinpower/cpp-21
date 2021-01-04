@@ -17,7 +17,8 @@ public:
 
 	bool	isInSquad(ISpaceMarine* unit);
 	void	freeSquad();
-	int		copySquad(ISpaceMarine **tmp);
+	int		copySquadToTmp(ISpaceMarine **tmp);
+	int		copySquadFromTmp(ISpaceMarine **tmp);
 
 private:
 	ISpaceMarine	**_squad;

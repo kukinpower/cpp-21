@@ -20,29 +20,19 @@ int main()
 	}
 	delete vlc;
 
-	vlc = new Squad;
+	Squad* new_vlc = new Squad;
 	bob = new TacticalMarine;
 	jim = new AssaultTerminator;
-	vlc->push(bob);
-	vlc->push(bob);
-	vlc->push(jim);
-	vlc->push(jim);
-	std::cout << "vlc count: " << vlc->getCount() << std::endl;
+	new_vlc->push(bob);
+	new_vlc->push(bob);
+	new_vlc->push(jim);
+	new_vlc->push(jim);
+	std::cout << "new_vlc count: " << new_vlc->getCount() << std::endl;
 
-	ISquad *copy = new Squad;
-	copy = vlc;
-	std::cout << "copy count: " << copy->getCount() << std::endl;
+	Squad copy = Squad(*new_vlc);
+	std::cout << "copy count: " << copy.getCount() << std::endl;
 
-	Squad *a = new Squad;
-	a->push(bob);
-	a->push(jim);
-	std::cout << std::endl << "a count: " << a->getCount() << std::endl;
-	Squad b(*a);
-	std::cout << "b count: " << a->getCount() << std::endl;
-
-	delete vlc;
-	delete copy;
-	delete a;
+	delete new_vlc;
 
 	return 0;
 }

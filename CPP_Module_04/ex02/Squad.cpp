@@ -6,7 +6,8 @@ Squad::Squad() : _squad(nullptr), _count(0) {
 
 Squad::~Squad() {
 
-	freeSquad();
+	if (_squad != nullptr)
+		freeSquad();
 }
 
 Squad::Squad(const Squad &copy) {
@@ -20,8 +21,8 @@ Squad	&Squad::operator=(const Squad &copy) {
 		freeSquad();
 	}
 	_squad = new ISpaceMarine*[copy._count];
-	copySquad(copy._squad);
 	_count = copy._count;
+	copySquadFromTmp(copy._squad);
 	return *this;
 }
 
@@ -57,7 +58,18 @@ bool	Squad::isInSquad(ISpaceMarine* unit) {
 	return false;
 }
 
-int 	Squad::copySquad(ISpaceMarine **tmp) {
+int 	Squad::copySquadFromTmp(ISpaceMarine **tmp) {
+
+	int i = 0;
+
+	while (i < _count) {
+		_squad[i] = tmp[i]->clone();
+		i++;
+	}
+	return i;
+}
+
+int 	Squad::copySquadToTmp(ISpaceMarine **tmp) {
 
 	int i = 0;
 
@@ -76,9 +88,10 @@ int		Squad::push(ISpaceMarine* unit) {
 
 	ISpaceMarine **tmp = new ISpaceMarine*[_count + 1];
 
-	int i = copySquad(tmp);
+	int i = copySquadToTmp(tmp);
 	tmp[i] = unit;
-	delete[] _squad;
+	if (_squad != nullptr)
+		delete[] _squad;
 	_squad = tmp;
 	_count++;
 
