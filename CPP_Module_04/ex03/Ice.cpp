@@ -8,20 +8,21 @@ Ice::~Ice() {
 
 }
 
-Ice::Ice(const Ice &copy) {
+Ice::Ice(const Ice &copy) : AMateria("ice") {
 
 	*this = copy;
 }
 
 Ice	&Ice::operator=(const Ice &copy) {
 
+	AMateria::operator=(copy);
 	return *this;
 }
 
 AMateria* Ice::clone() const {
 
 	AMateria	*ice;
-	ice = new Ice;
+	ice = new Ice(*this);
 	return ice;
 }
 

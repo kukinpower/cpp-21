@@ -3,7 +3,7 @@
 #include <iostream>
 #include "IMateriaSource.hpp"
 
-class MateriaSource {
+class MateriaSource : public IMateriaSource {
 
 public:
 	MateriaSource();
@@ -11,10 +11,11 @@ public:
 	virtual ~MateriaSource();
 	MateriaSource &operator=(const MateriaSource &copy);
 
-	virtual void learnMateria(AMateria*);
+	virtual void learnMateria(AMateria *m);
 	virtual AMateria* createMateria(std::string const & type);
 
 private:
+	AMateria	*_knowledgeBase[CAPACITY];
 
 };
 

@@ -2,10 +2,17 @@
 
 MateriaSource::MateriaSource() {
 
+	for (int i = 0; i < CAPACITY; i++) {
+		_knowledgeBase[i] = nullptr;
+	}
 }
 
 MateriaSource::~MateriaSource() {
 
+	for (int i = 0; i < CAPACITY; i++) {
+		if (_knowledgeBase[i] != nullptr)
+			delete _knowledgeBase[i];
+	}
 }
 
 MateriaSource::MateriaSource(const MateriaSource &copy) {
@@ -15,19 +22,35 @@ MateriaSource::MateriaSource(const MateriaSource &copy) {
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &copy) {
 
+	for (int i = 0; i < CAPACITY; i++) {
+		if (_knowledgeBase[i] != nullptr)
+			delete _knowledgeBase[i];
+		_knowledgeBase[i] = copy._knowledgeBase[i]->clone();
+	}
+
 	return *this;
 }
 
-void MateriaSource::learnMateria(AMateria*) {
-//must copy the Materia passed as parameter, and store it in memory
-//to be cloned later. Much in the same way as for Character , the Source can know at
-//most 4 Materia, which are not necessarily unique
+void MateriaSource::learnMateria(AMateria *m) {
 
+	if (m == nullptr) {
+		return ;
+	}
+
+	for (int i = 0; i < CAPACITY; i++) {
+		if (_knowledgeBase[i] == nullptr) {
+			_knowledgeBase[i] = m;
+			break ;
+		}
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
-//will return a new Materia, which will be a
-//copy of the Materia (previously learned by the Source) which type equals the parameter.
-//Returns 0 if the type is unknown.
 
+	for (int i = 0; i < CAPACITY; i++) {
+		if (_knowledgeBase[i]->getType() == type) {
+			return _knowledgeBase[i]->clone();
+		}
+	}
+	return nullptr;
 }
