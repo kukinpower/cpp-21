@@ -27,8 +27,22 @@ int main()
 	vlc->push(bob);
 	vlc->push(jim);
 	vlc->push(jim);
-	std::cout << vlc->getCount() << std::endl;
+	std::cout << "vlc count: " << vlc->getCount() << std::endl;
+
+	ISquad *copy = new Squad;
+	copy = vlc;
+	std::cout << "copy count: " << copy->getCount() << std::endl;
+
+	Squad *a = new Squad;
+	a->push(bob);
+	a->push(jim);
+	std::cout << std::endl << "a count: " << a->getCount() << std::endl;
+	Squad b(*a);
+	std::cout << "b count: " << a->getCount() << std::endl;
+
 	delete vlc;
+	delete copy;
+	delete a;
 
 	return 0;
 }
