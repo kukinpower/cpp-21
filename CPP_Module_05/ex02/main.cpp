@@ -58,5 +58,9 @@ int		main(void) {
 	bb.signForm(presidential);
 	ensureFormExec(presidential, bb);
 
+	std::cout << std::endl << "------ Testing Bureaucrat executeForm ------" << std::endl;
+	bb.executeForm(presidential);
+	b.executeForm(presidential);
+
 	return 0;
 }
