@@ -10,12 +10,12 @@ public:
 
 	virtual ~RobotomyRequestForm();
 
-	void execute(Bureaucrat const & executor) const;
-
 private:
 	RobotomyRequestForm();
 	RobotomyRequestForm(const RobotomyRequestForm &copy);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
+
+	void performAction() const;
 
 };
 

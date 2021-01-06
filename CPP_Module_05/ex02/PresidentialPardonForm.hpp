@@ -10,12 +10,12 @@ public:
 
 	virtual ~PresidentialPardonForm();
 
-	void execute(Bureaucrat const & executor) const;
-
 private:
 	PresidentialPardonForm();
 	PresidentialPardonForm(const PresidentialPardonForm &copy);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
+
+	void performAction() const;
 
 };
 

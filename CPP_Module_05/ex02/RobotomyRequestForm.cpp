@@ -23,9 +23,8 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 	return *this;
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+void	RobotomyRequestForm::performAction() const {
 
-	AForm::execute(executor);
 	std::cout << "* drilling noises *" << std::endl;
 	if (rand() % 2 == 0) {
 		std::cout << getTarget() << " has been robotomized successfully" << std::endl;

@@ -13,8 +13,6 @@ public:
 
 	virtual ~ShrubberyCreationForm();
 
-	void execute(Bureaucrat const & executor) const;
-
 private:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);

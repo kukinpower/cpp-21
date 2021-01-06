@@ -89,5 +89,7 @@ void AForm::execute(Bureaucrat const & executor) const {
 		throw AForm::GradeTooLowException();
 	} else if (this->_isSigned == false) {
 		throw AForm::FormNotSignedException();
+	} else {
+		this->performAction();
 	}
 }

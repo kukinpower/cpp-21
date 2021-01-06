@@ -44,8 +44,3 @@ void	ShrubberyCreationForm::performAction() const {
 	}
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-
-	AForm::execute(executor);
-	performAction();
-}
