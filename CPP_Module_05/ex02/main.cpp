@@ -32,7 +32,7 @@ void 	ensureFormExec(const PresidentialPardonForm &a, const Bureaucrat &b) {
 int		main(void) {
 	srand(time(0));
 
-	ShrubberyCreationForm shrubbery("../home");
+	ShrubberyCreationForm shrubbery("home");
 	RobotomyRequestForm	robotomy("Badass");
 	Bureaucrat b("Bob", 135);
 
