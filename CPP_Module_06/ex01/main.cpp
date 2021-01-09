@@ -31,7 +31,6 @@ void * serialize(void) {
 	void *raw = reinterpret_cast<void *>(randomData);
 
 	delete num;
-	delete[] randomData;
 
 	return raw;
 }
@@ -78,5 +77,7 @@ int 	main() {
 	std::cout << data->s1 << std::endl << data->n << std::endl << data->s2 << std::endl;
 
 	delete data;
+	delete[] reinterpret_cast<char *>(raw);
+
 	return 0;
 }
