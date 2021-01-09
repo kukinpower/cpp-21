@@ -1,4 +1,4 @@
-NAME = exercise
+NAME = convert
 
 SRC = $(wildcard *.cpp)
 
