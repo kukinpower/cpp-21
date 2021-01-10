@@ -7,7 +7,8 @@ void * serialize(void) {
 			"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 			"abcdefghijklmnopqrstuvwxyz";
 
-	char *randomData = new char[sizeof(char) * 16 + sizeof(int)];
+	char *randomData = new char[SIZEOF_CHAR_SEQ * 2 + sizeof(int)];
+	std::cout << SIZEOF_CHAR_SEQ * 2 + sizeof(int) << std::endl;
 
 	for (uint32_t i = 0; i < SIZEOF_CHAR_SEQ; ++i) {
 		randomData[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
@@ -71,6 +72,7 @@ int 	main() {
 
 	std::cout << "Serialize: " << std::endl;
 	void	*raw = serialize();
+	std::cout << "Raw data size: " << sizeof(raw) << std::endl;
 	Data	*data = deserialize(raw);
 
 	std::cout << std::endl << "Deserialize: " << std::endl;
