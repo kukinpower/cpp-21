@@ -126,6 +126,8 @@ bool 		Converter::isBadArg(const std::string &str) {
 	int fFlag = 0;
 	int dotFlag = 0;
 	for (uint64_t i = 0; i < str.length(); i++) {
+		if (i == 0 && (str[i] == '-' || str[i] == '+'))
+			continue ;
 		if (str[i] == '.') {
 			dotFlag++;
 			if (dotFlag > 1)
