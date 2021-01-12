@@ -3,11 +3,6 @@
 #include <iostream>
 #include <stack>
 
-//Make a MutantStack class, that will be implemented in terms of a std::stack, and
-//offer all of its member functions, only it will also offer an iterator.
-//Below is an example of code, the output of which should be the same as if we replaced
-//the MutantStack with, for example, and std::list. You will of course provide tests for
-//all of this in your main function.
 template<
 		class T,
 		class Container = std::deque<T>
