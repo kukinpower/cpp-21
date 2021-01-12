@@ -45,6 +45,7 @@ void 	Span::addNumber(std::vector<int>::iterator itFirst, std::vector<int>::iter
 		_size++;
 		itFirst++;
 	}
+	_isSorted = false;
 }
 
 void 	Span::checkContainerState() {
