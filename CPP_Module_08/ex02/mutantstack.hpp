@@ -14,7 +14,7 @@ public:
 	MutantStack(const MutantStack &copy) : std::stack<T, Container>(copy) {}
 	virtual ~MutantStack() {}
 	MutantStack &operator=(const MutantStack &copy) {
-		*this = copy;
+		this->c = copy.c;
 		return *this;
 	}
 
